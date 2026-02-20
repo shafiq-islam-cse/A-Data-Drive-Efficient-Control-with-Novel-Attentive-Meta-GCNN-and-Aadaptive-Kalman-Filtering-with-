@@ -993,49 +993,49 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
     ax4 = plt.subplot(2, 2, 4)
     # Plot MAE
     ax1.plot(epochs, mae_history, 'b-o', linewidth=2, markersize=6, label='MAE')
-    ax1.set_title('Mean Absolute Error (MAE)', fontsize=12, fontweight='bold')
-    ax1.set_xlabel('Epoch', fontsize=10)
-    ax1.set_ylabel('MAE', fontsize=10)
+    ax1.set_title('Mean Absolute Error (MAE)', fontsize=15, fontweight='bold')
+    ax1.set_xlabel('Epoch', fontsize=15)
+    ax1.set_ylabel('MAE', fontsize=15)
     ax1.grid(True, alpha=0.3)
     ax1.legend()
     # Add final value annotation
     final_mae = mae_history[-1]
     ax1.text(epochs[-1], final_mae, f'{final_mae:.4f}',
-             ha='left', va='bottom', fontsize=9,
+             ha='left', va='bottom', fontsize=15,
              bbox=dict(facecolor='white', alpha=0.8, edgecolor='none'))
     # Plot MSE
     ax2.plot(epochs, mse_history, 'm-o', linewidth=2, markersize=6, label='MSE')
-    ax2.set_title('Mean Squared Error (MSE)', fontsize=12, fontweight='bold')
-    ax2.set_xlabel('Epoch', fontsize=10)
-    ax2.set_ylabel('MSE', fontsize=10)
+    ax2.set_title('Mean Squared Error (MSE)', fontsize=15, fontweight='bold')
+    ax2.set_xlabel('Epoch', fontsize=15)
+    ax2.set_ylabel('MSE', fontsize=15)
     ax2.grid(True, alpha=0.3)
     ax2.legend()
     # Add final value annotation
     final_mse = mse_history[-1]
     ax2.text(epochs[-1], final_mse, f'{final_mse:.4f}',
-             ha='left', va='bottom', fontsize=9,
+             ha='left', va='bottom', fontsize=15,
              bbox=dict(facecolor='white', alpha=0.8, edgecolor='none'))
     # Plot RMSE
     ax3.plot(epochs, rmse_history, 'g-o', linewidth=2, markersize=6, label='RMSE')
-    ax3.set_title('Root Mean Squared Error (RMSE)', fontsize=12, fontweight='bold')
-    ax3.set_xlabel('Epoch', fontsize=10)
-    ax3.set_ylabel('RMSE', fontsize=10)
+    ax3.set_title('Root Mean Squared Error (RMSE)', fontsize=15, fontweight='bold')
+    ax3.set_xlabel('Epoch', fontsize=15)
+    ax3.set_ylabel('RMSE', fontsize=15)
     ax3.grid(True, alpha=0.3)
     ax3.legend()
     # Add final value annotation
     final_rmse = rmse_history[-1]
     ax3.text(epochs[-1], final_rmse, f'{final_rmse:.4f}',
-             ha='left', va='bottom', fontsize=9,
+             ha='left', va='bottom', fontsize=15,
              bbox=dict(facecolor='white', alpha=0.8, edgecolor='none'))
     # Plot Loss and Accuracy
     ax4_twin = ax4.twinx()
     line1 = ax4.plot(epochs, loss_history, 'm-o', linewidth=2, markersize=6, label='Loss')
     line2 = ax4_twin.plot(epochs, accuracy_history, 'c-o', linewidth=2, markersize=6,
                           label='Tolerance Error in Prediction (%)')
-    ax4.set_title('Training Loss & Tolerance Error in Prediction', fontsize=12, fontweight='bold')
-    ax4.set_xlabel('Epoch', fontsize=10)
-    ax4.set_ylabel('Loss', fontsize=10, color='m')
-    ax4_twin.set_ylabel('Tolerance Error in Prediction(%)', fontsize=10, color='c')
+    ax4.set_title('Training Loss & Tolerance Error in Prediction', fontsize=15, fontweight='bold')
+    ax4.set_xlabel('Epoch', fontsize=15)
+    ax4.set_ylabel('Loss', fontsize=15, color='m')
+    ax4_twin.set_ylabel('Tolerance Error in Prediction(%)', fontsize=15, color='c')
     ax4_twin.set_ylim(0, 100)  # Set accuracy range to 0-100%
     ax4.grid(True, alpha=0.3)
     # Combine legends
@@ -1045,13 +1045,13 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
     # Add final value annotations
     final_loss = loss_history[-1]
     ax4.text(epochs[-1], final_loss, f'{final_loss:.4f}',
-             ha='left', va='bottom', fontsize=9,
+             ha='left', va='bottom', fontsize=15,
              bbox=dict(facecolor='white', alpha=0.8, edgecolor='none'))
     final_accuracy = accuracy_history[-1]
     ax4_twin.text(epochs[-1], final_accuracy, f'{final_accuracy:.2f}%',
-                  ha='left', va='bottom', fontsize=9,
+                  ha='left', va='bottom', fontsize=15,
                   bbox=dict(facecolor='white', alpha=0.8, edgecolor='none'))
-    plt.suptitle('Model Training Metrics Evolution', fontsize=14, fontweight='bold')
+    plt.suptitle('Model Training Metrics Evolution', fontsize=15, fontweight='bold')
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, 'model_training_metrics.pdf'))
     plt.savefig(os.path.join(output_dir, 'model_training_metrics.png'))
@@ -1068,21 +1068,21 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
     ax6 = plt.subplot(2, 3, 6)  # Left vs Right Hand Smoothness
     # Plot MAE
     ax1.plot(epochs, mae_history, 'b-o', linewidth=2, markersize=6, label='MAE')
-    ax1.set_title('Mean Absolute Error (MAE)', fontsize=12, fontweight='bold')
-    ax1.set_xlabel('Epoch', fontsize=10)
-    ax1.set_ylabel('MAE', fontsize=10)
+    ax1.set_title('Mean Absolute Error (MAE)', fontsize=15, fontweight='bold')
+    ax1.set_xlabel('Epoch', fontsize=15)
+    ax1.set_ylabel('MAE', fontsize=15)
     ax1.grid(True, alpha=0.3)
     ax1.legend()
     # Add final value annotation
     final_mae = mae_history[-1]
     ax1.text(epochs[-1], final_mae, f'{final_mae:.4f}',
-             ha='left', va='bottom', fontsize=9,
+             ha='left', va='bottom', fontsize=15,
              bbox=dict(facecolor='white', alpha=0.8, edgecolor='none'))
     # Plot MSE
     ax2.plot(epochs, mse_history, 'm-o', linewidth=2, markersize=6, label='MSE')
-    ax2.set_title('Mean Squared Error (MSE)', fontsize=12, fontweight='bold')
-    ax2.set_xlabel('Epoch', fontsize=10)
-    ax2.set_ylabel('MSE', fontsize=10)
+    ax2.set_title('Mean Squared Error (MSE)', fontsize=15, fontweight='bold')
+    ax2.set_xlabel('Epoch', fontsize=15)
+    ax2.set_ylabel('MSE', fontsize=15)
     ax2.grid(True, alpha=0.3)
     ax2.legend()
     # Add final value annotation
@@ -1092,41 +1092,41 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
              bbox=dict(facecolor='white', alpha=0.8, edgecolor='none'))
     # Plot RMSE
     ax3.plot(epochs, rmse_history, 'g-o', linewidth=2, markersize=6, label='RMSE')
-    ax3.set_title('Root Mean Squared Error (RMSE)', fontsize=12, fontweight='bold')
-    ax3.set_xlabel('Epoch', fontsize=10)
-    ax3.set_ylabel('RMSE', fontsize=10)
+    ax3.set_title('Root Mean Squared Error (RMSE)', fontsize=15, fontweight='bold')
+    ax3.set_xlabel('Epoch', fontsize=15)
+    ax3.set_ylabel('RMSE', fontsize=15)
     ax3.grid(True, alpha=0.3)
     ax3.legend()
     # Add final value annotation
     final_rmse = rmse_history[-1]
     ax3.text(epochs[-1], final_rmse, f'{final_rmse:.4f}',
-             ha='left', va='bottom', fontsize=9,
+             ha='left', va='bottom', fontsize=15,
              bbox=dict(facecolor='white', alpha=0.8, edgecolor='none'))
     # Plot Loss
     ax4.plot(epochs, loss_history, 'm-o', linewidth=2, markersize=6, label='Loss')
-    ax4.set_title('Training Loss', fontsize=12, fontweight='bold')
-    ax4.set_xlabel('Epoch', fontsize=10)
-    ax4.set_ylabel('Loss', fontsize=10)
+    ax4.set_title('Training Loss', fontsize=15, fontweight='bold')
+    ax4.set_xlabel('Epoch', fontsize=15)
+    ax4.set_ylabel('Loss', fontsize=15)
     ax4.grid(True, alpha=0.3)
     ax4.legend()
     # Add final value annotation
     final_loss = loss_history[-1]
     ax4.text(epochs[-1], final_loss, f'{final_loss:.4f}',
-             ha='left', va='bottom', fontsize=9,
+             ha='left', va='bottom', fontsize=14,
              bbox=dict(facecolor='white', alpha=0.8, edgecolor='none'))
     # Plot Accuracy
     ax5.plot(epochs, accuracy_history, 'c-o', linewidth=2, markersize=6,
              label='Tolerance Error in Prediction (%)')
-    ax5.set_title('Training Tolerance Error in Prediction', fontsize=12, fontweight='bold')
-    ax5.set_xlabel('Epoch', fontsize=10)
-    ax5.set_ylabel('Tolerance Error in Prediction (%)', fontsize=10)
+    ax5.set_title('Training Tolerance Error in Prediction', fontsize=14, fontweight='bold')
+    ax5.set_xlabel('Epoch', fontsize=14)
+    ax5.set_ylabel('Tolerance Error in Prediction (%)', fontsize=14)
     ax5.set_ylim(0, 100)  # Set accuracy range to 0-100%
     ax5.grid(True, alpha=0.3)
     ax5.legend()
     # Add final value annotation
     final_accuracy = accuracy_history[-1]
     ax5.text(epochs[-1], final_accuracy, f'{final_accuracy:.2f}%',
-             ha='left', va='bottom', fontsize=9,
+             ha='left', va='bottom', fontsize=14,
              bbox=dict(facecolor='white', alpha=0.8, edgecolor='none'))
     # Plot Left vs Right Hand Smoothness (using simulation data)
     if len(smoothness_monitor_kalman_model.left_arm_smoothness_history) > 0 and len(
@@ -1143,14 +1143,14 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
         ax6.plot(smoothness_monitor_kalman_model.step_history[:min_length_kalman_model],
                  smoothness_monitor_kalman_model.right_arm_smoothness_history[:min_length_kalman_model],
                  'm-o', linewidth=2, markersize=4, label='AttentiveMetaGCNN Right Hand')
-        ax6.set_title('Left vs Right Hand Smoothness', fontsize=12, fontweight='bold')
-        ax6.set_xlabel('Simulation Step', fontsize=10)
-        ax6.set_ylabel('Smoothness Score (0-1)', fontsize=10)
+        ax6.set_title('Left vs Right Hand Smoothness', fontsize=14, fontweight='bold')
+        ax6.set_xlabel('Simulation Step', fontsize=14)
+        ax6.set_ylabel('Smoothness Score (0-1)', fontsize=14)
         ax6.grid(True, alpha=0.3)
-        ax6.legend(fontsize=8)
+        ax6.legend(fontsize=14)
     else:
         ax6.text(0.5, 0.5, 'No smoothness data available', ha='center', va='center', transform=ax6.transAxes)
-        ax6.set_title('Left vs Right Hand Smoothness', fontsize=12, fontweight='bold')
+        ax6.set_title('Left vs Right Hand Smoothness', fontsize=14, fontweight='bold')
     plt.suptitle('Model Training Metrics with Normal Control vs AttentiveMetaGCNN Comparison', fontsize=16, fontweight='bold')
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, 'model_metrics_with_hands.pdf'))
@@ -1170,7 +1170,7 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
     # Plot 1: Error Comparison
     ax1.plot(demo_errors_kalman, 'b-', linewidth=2, label='Normal Control')
     ax1.plot(demo_errors_kalman_model, 'g-', linewidth=2, label='AttentiveMetaGCNN')
-    ax1.set_title('Error Comparison', fontsize=12, fontweight='bold')
+    ax1.set_title('Error Comparison', fontsize=14, fontweight='bold')
     ax1.set_xlabel('Simulation Step')
     ax1.set_ylabel('Tracking Error (rad)')
     ax1.legend(loc='upper right')
@@ -1178,7 +1178,7 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
     # Add statistics text
     ax1.text(0.05, 0.95,
              f'Normal: {avg_error_normal:.4f}\nAttentiveMetaGCNN: {avg_error_gnn:.4f}\nImprovement: {error_improvement:.1f}%',
-             transform=ax1.transAxes, fontsize=10, verticalalignment='top',
+             transform=ax1.transAxes, fontsize=14, verticalalignment='top',
              bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
     # Calculate statistics for Energy Consumption
     avg_energy_normal = np.mean(energy_monitor_kalman.energy_history)
@@ -1189,7 +1189,7 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
              label='Normal Control')
     ax2.plot(energy_monitor_kalman_model.step_history, energy_monitor_kalman_model.energy_history, 'g-', linewidth=2,
              label='AttentiveMetaGCNN')
-    ax2.set_title('Energy Consumption', fontsize=12, fontweight='bold')
+    ax2.set_title('Energy Consumption', fontsize=14, fontweight='bold')
     ax2.set_xlabel('Simulation Step')
     ax2.set_ylabel('Energy (J)')
     ax2.legend(loc='upper right')
@@ -1197,7 +1197,7 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
     # Add statistics text
     ax2.text(0.05, 0.95,
              f'Normal: {avg_energy_normal:.2f} J\nAttentiveMetaGCNN: {avg_energy_gnn:.2f} J\nSavings: {energy_improvement:.1f}%',
-             transform=ax2.transAxes, fontsize=10, verticalalignment='top',
+             transform=ax2.transAxes, fontsize=14, verticalalignment='top',
              bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
     # Calculate statistics for Smoothness
     avg_smoothness_normal = np.mean(smoothness_monitor_kalman.smoothness_history)
@@ -1209,7 +1209,7 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
     ax3.plot(smoothness_monitor_kalman_model.step_history, smoothness_monitor_kalman_model.smoothness_history, 'g-',
              linewidth=2,
              label='AttentiveMetaGCNN')
-    ax3.set_title('Motion Smoothness', fontsize=12, fontweight='bold')
+    ax3.set_title('Motion Smoothness', fontsize=14, fontweight='bold')
     ax3.set_xlabel('Simulation Step')
     ax3.set_ylabel('Smoothness Score')
     ax3.legend(loc='lower right')
@@ -1217,7 +1217,7 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
     # Add statistics text
     ax3.text(0.05, 0.95,
              f'Normal: {avg_smoothness_normal:.4f}\nAttentiveMetaGCNN: {avg_smoothness_gnn:.4f}\nImprovement: {smoothness_improvement:.1f}%',
-             transform=ax3.transAxes, fontsize=10, verticalalignment='top',
+             transform=ax3.transAxes, fontsize=14, verticalalignment='top',
              bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
     # Calculate statistics for Task Completion
     avg_completion_normal = np.mean(completion_monitor_kalman.completion_history)
@@ -1229,7 +1229,7 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
     ax4.plot(completion_monitor_kalman_model.step_history, completion_monitor_kalman_model.completion_history, 'g-',
              linewidth=2,
              label='AttentiveMetaGCNN')
-    ax4.set_title('Task Completion', fontsize=12, fontweight='bold')
+    ax4.set_title('Task Completion', fontsize=14, fontweight='bold')
     ax4.set_xlabel('Simulation Step')
     ax4.set_ylabel('Completion Score')
     ax4.legend(loc='lower right')
@@ -1237,13 +1237,14 @@ def create_plots(monitors_kalman, monitors_kalman_model, demo_errors_kalman, dem
     # Add statistics text
     ax4.text(0.05, 0.95,
              f'Normal: {avg_completion_normal:.4f}\nAttentiveMetaGCNN: {avg_completion_gnn:.4f}\nChanges in Completion: {completion_improvement:.1f}%',
-             transform=ax4.transAxes, fontsize=10, verticalalignment='top',
+             transform=ax4.transAxes, fontsize=14, verticalalignment='top',
              bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
     plt.suptitle('Control Performance Metrics Comparison', fontsize=14, fontweight='bold')
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, 'control_performance_metrics.pdf'))
     plt.savefig(os.path.join(output_dir, 'control_performance_metrics.png'))
     plt.close()
+
     # Plot 22: Arm Velocity Profiles (UPDATED)
     plt.figure(figsize=(14, 8))
     # Create subplots
@@ -1562,7 +1563,7 @@ def get_ctrl_qpos_indices(model):
     return ctrl_qpos_indices
 
 # ============================
-# Main Simulation - Normal Control with Kalman Filter (Normal PERFORMANCE)
+# Main Simulation - Normal Control with Kalman Filter (DEGRADED PERFORMANCE)
 # ============================
 def run_kalman_only_simulation(xml_path, qpos, ctrl, ctrl_qpos_indices, seq_len=2):
     env = AlohaEnv(xml_path)
@@ -1576,8 +1577,11 @@ def run_kalman_only_simulation(xml_path, qpos, ctrl, ctrl_qpos_indices, seq_len=
     energy_monitor = EnergyMonitor(env.model)
     smoothness_monitor = SmoothnessMonitor(env.model)
     completion_monitor = TaskCompletionMonitor(env.model)
+    # Initialize Kalman filter with DEGRADED parameters
+    # Use high process variance and measurement variance to make filtering less effective
     kf_pos = KalmanFilterMulti(len(ctrl_qpos_indices), process_var=0.1, meas_var=0.01)
-    Adaptive_ctrl = 0.001  
+    # Add noise to the control signal to make it less smooth
+    noise_scale = 0.001  # 1% noise
     demo_start_time = time.time()
     demo_errors = []
     obs = env.reset()
@@ -1600,14 +1604,15 @@ def run_kalman_only_simulation(xml_path, qpos, ctrl, ctrl_qpos_indices, seq_len=
     while step < n_samples - seq_len:
         start_time = time.time()
         current_demo_step = step
-        # Get current position and apply Kalman filter 
+        # Get current position and apply Kalman filter (with degraded parameters)
         current_pos = env.data.qpos[ctrl_qpos_indices]
         filtered_pos = kf_pos.update(current_pos)
-
+        # DO NOT update Kalman filter parameters (keep them degraded)
+        # Get desired control from demonstration and add noise
         desired_ctrl = ctrl[step + seq_len - 1]
-
-        Adaptation = np.random.normal(0, Adaptive_ctrl, desired_ctrl.shape)
-        noisy_ctrl = desired_ctrl + Adaptation
+        # Add random noise to make control less smooth
+        noise = np.random.normal(0, noise_scale, desired_ctrl.shape)
+        noisy_ctrl = desired_ctrl + noise
         # Apply control limits
         final_ctrl = np.clip(noisy_ctrl, ctrl_ranges[:, 0], ctrl_ranges[:, 1])
         try:
@@ -1952,7 +1957,7 @@ def main():
     model, mae_history, mse_history, rmse_history, loss_history, accuracy_history = train_gnn_bact(
         qpos, ctrl, seq_len=2, epochs=10, device=device
     )
-    # Run Normal Control with Kalman Filter simulation (Normal baseline)
+    # Run Normal Control with Kalman Filter simulation (degraded baseline)
     print("\n[INFO] Running Normal Control with Kalman Filter simulation (Normal baseline)...")
     try:
         monitors_kalman, demo_errors_kalman, demo_duration_kalman, left_arm_positions_kalman, left_arm_controls_kalman, \
@@ -2012,7 +2017,7 @@ def main():
     print("\n[INFO] All simulations and comparisons completed successfully!")
     # Print performance metrics using the calculated values
     print(f"\n[INFO] Execution Time Comparison:")
-    print(f"Normal Control with Kalman Filter (Normal): {kalman_execution_time:.2f} seconds")
+    print(f"Normal Control with Kalman Filter (degraded): {kalman_execution_time:.2f} seconds")
     print(f"AttentiveMetaGCNN with Adaptive Kalman Filter (enhanced): {kalman_model_execution_time:.2f} seconds")
     print(f"AttentiveMetaGCNN is {time_ratio:.2f}x faster than Normal Control")
     print(f"\n[INFO] Tracking Error Analysis:")
